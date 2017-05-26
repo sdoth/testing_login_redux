@@ -9,23 +9,26 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  TextInput,
+  TouchableOpacity
 } from 'react-native';
 
 export default class Test_Login extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+        <TextInput style={styles.textInput}
+          placeholder='username'
+         ></TextInput>
+         <TextInput style={styles.textInput}
+          placeholder='password'
+         ></TextInput>
+         <TouchableOpacity
+          style={styles.button}
+         >
+         <Text style={styles.welcome}>Login</Text>
+         </TouchableOpacity>
       </View>
     );
   }
@@ -36,7 +39,20 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#fff',
+  },
+  textInput:{
+    
+   width:200,
+    borderRadius:1,
+    borderColor:'#000',
     backgroundColor: '#F5FCFF',
+  },
+  button:{
+    backgroundColor:'#e0e3e6',
+    padding:12,
+    justifyContent:'center',
+    alignItems:'center'
   },
   welcome: {
     fontSize: 20,
